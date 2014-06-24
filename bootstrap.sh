@@ -60,6 +60,7 @@ else
 fi
 cp /etc/nginx/sites-available/default  /etc/nginx/sites-available/original
 cp /vagrant/install/nginx.conf /etc/nginx/sites-available/default
+cp /vagrant/install/index.html /usr/share/nginx/html/index.html
 mkdir -p /var/opt/nginx/cache
 
 echo "**   starting nginx service ..."
