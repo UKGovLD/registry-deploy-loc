@@ -38,10 +38,10 @@ if [ ! -d "/var/opt/ldregistry" ]; then
 fi
 
 # If the static ldregistry area is not already set up then clone from the vagrant synced folder
-if [ ! -d "/opt/ldregistry/conf" ]; then
+# if [ ! -d "/opt/ldregistry/conf" ]; then
   cp -R /vagrant/ldregistry/* /opt/ldregistry
   chown -R  tomcat7 /opt/ldregistry/*
-fi
+# fi
 
 if [ ! -d "/var/log/ldregistry" ]; then
   mkdir /var/log/ldregistry
@@ -60,7 +60,8 @@ else
 fi
 cp /etc/nginx/sites-available/default  /etc/nginx/sites-available/original
 cp /vagrant/install/nginx.conf /etc/nginx/sites-available/default
-cp /vagrant/install/index.html /usr/share/nginx/html/index.html
+cp /vagrant/install/index.html /usr/share/nginx/html
+cp /vagrant/install/robots.txt /usr/share/nginx/html
 mkdir -p /var/opt/nginx/cache
 
 echo "**   starting nginx service ..."
